@@ -1,0 +1,23 @@
+@api = http://localhost:5227
+
+### Aula 1: o JSON do ViaCEP, repassado como texto
+GET {{api}}/api/enderecos/88010000/json
+
+### Aula 2: o mesmo CEP como objeto Endereco
+GET {{api}}/api/enderecos/88036000
+
+### Aula 2: CEP que não existe (404)
+GET {{api}}/api/enderecos/99999999
+
+### Aula 3: entregas da pizzaria na MotoByte (precisa do User Secrets)
+GET {{api}}/api/entregas
+
+### Aula 3: nova entrega (ViaCEP + MotoByte com token)
+POST {{api}}/api/entregas
+Content-Type: application/json
+
+{
+  "cliente": "Diego Martins",
+  "cep": "88034001",
+  "pizzas": 3
+}
